@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dr. Rattan's Clinics · Ludhiana</title>
-<meta name="description" content="Dr. Rattan's Dental Clinic & Physiotherapy Clinic, Ludhiana. Save our contact, book an appointment, or message us on WhatsApp.">
+<meta name="description" content="Dr. Rattan's Physiotherapy Clinic & Physiodent Clinic, Ludhiana. Save our contact, book an appointment, or message us on WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
@@ -14,10 +14,10 @@
     --card:#FFFFFF;
     --ink:#23222A;
     --ink-soft:#5C5A64;
-    --dental:#8E1F2F;
-    --dental-soft:#F6E9EB;
     --physio:#2F4A63;
     --physio-soft:#E9EFF4;
+    --physiodent:#8E1F2F;
+    --physiodent-soft:#F6E9EB;
     --hairline:#DDD8CC;
     --radius:14px;
   }
@@ -62,8 +62,8 @@
     scroll-margin-top:20px;
   }
   .clinic:target{outline:2px solid var(--accent);outline-offset:3px}
-  .clinic.dental{--accent:var(--dental);--accent-soft:var(--dental-soft)}
-  .clinic.physio{--accent:var(--physio);--accent-soft:var(--physio-soft)}
+  .clinic.physio-clinic{--accent:var(--physio);--accent-soft:var(--physio-soft)}
+  .clinic.physiodent-clinic{--accent:var(--physiodent);--accent-soft:var(--physiodent-soft)}
   .clinic-head{display:flex;align-items:center;gap:12px}
   .badge{
     flex:0 0 auto;
@@ -79,7 +79,18 @@
     color:var(--accent);
     line-height:1.25;
   }
-  .doctor{margin-top:12px;font-size:1.02rem;font-weight:600}
+  .services-tag{
+    display:inline-block;
+    margin-top:8px;
+    padding:3px 10px;
+    border-radius:999px;
+    font-size:.74rem;
+    font-weight:600;
+    letter-spacing:.04em;
+    background:var(--accent-soft);
+    color:var(--accent);
+  }
+  .doctor{margin-top:14px;font-size:1.02rem;font-weight:600}
   .role{font-size:.86rem;color:var(--ink-soft)}
   .addr{
     margin-top:10px;
@@ -111,6 +122,27 @@
   .btn.primary{background:var(--accent);color:#fff}
   .btn:active{opacity:.85}
   .btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+  .save-contacts{
+    margin-top:14px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .save-contacts .label{
+    font-size:.78rem;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .save-contacts .btn-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  .save-contacts .btn-row.triple{
+    grid-template-columns:1fr 1fr 1fr;
+  }
   .tear{
     display:flex;align-items:center;gap:10px;
     margin:22px 4px;
@@ -121,17 +153,9 @@
   .tear::before,.tear::after{
     content:"";flex:1;border-top:2px dashed var(--hairline);
   }
-  .both{
-    display:block;text-align:center;
-    margin-top:26px;
-    font-size:.9rem;
-    color:var(--ink-soft);
-    text-decoration:underline;
-    text-underline-offset:3px;
-  }
   .insta{
     display:flex;align-items:center;justify-content:center;gap:8px;
-    margin:18px auto 0;
+    margin:22px auto 0;
     max-width:340px;
     padding:10px 14px;
     border:1px solid var(--hairline);
@@ -157,60 +181,26 @@
   <p class="lede">Save our contact, book an appointment, or message us on WhatsApp.</p>
 </header>
 
-<!-- ============ DENTAL ============ -->
-<section class="clinic dental" id="dental">
-  <div class="clinic-head">
-    <div class="badge" aria-hidden="true">
-      <!-- tooth -->
-      <svg viewBox="0 0 24 24"><path d="M7 3.5c-2.4 0-4 1.9-4 4.4 0 4 2 6.6 2.6 10.3.2 1.2.8 2.3 1.9 2.3 1.6 0 1.4-2.6 2-4.6.4-1.4 1.3-2.2 2.5-2.2s2.1.8 2.5 2.2c.6 2 .4 4.6 2 4.6 1.1 0 1.7-1.1 1.9-2.3C19 14.5 21 11.9 21 7.9c0-2.5-1.6-4.4-4-4.4-2 0-3 1.1-5 1.1s-3-1.1-5-1.1z"/></svg>
-    </div>
-    <h2 class="clinic-name">Dental Clinic</h2>
-  </div>
-  <p class="doctor">Dr. Rupinder Kaur <span class="role">&middot; B.D.S.</span></p>
-  <p class="role">Dental Surgeon</p>
-  <p class="addr">Bhai Harnam Singh Nagar, Sua Road,<br>Opp. Jagjit Nagar, Ludhiana</p>
-  <p class="phone"><a href="tel:+919988506438">&#9742; 99885 06438</a></p>
-  <div class="actions">
-    <a class="btn primary" href="dental.vcf" download="Dr-Rupinder-Kaur-Dentist.vcf">
-      <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg>
-      Save contact
-    </a>
-    <a class="btn" href="https://wa.me/919988506438?text=Hello%2C%20I%20would%20like%20to%20book%20a%20DENTAL%20appointment.%0AName%3A%20%0APreferred%20day%3A%20%0APreferred%20time%3A%20Morning%20/%20Evening">
-      <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M4 10h16M9.5 15.5l2 2 3.5-4"/></svg>
-      Book appointment
-    </a>
-    <a class="btn" href="tel:+919988506438">
-      <svg viewBox="0 0 24 24"><path d="M5 4h4l1.5 4.5L8 10a12 12 0 0 0 6 6l1.5-2.5L20 15v4a1.5 1.5 0 0 1-1.7 1.5C10 19.7 4.3 14 3.5 5.7A1.5 1.5 0 0 1 5 4z"/></svg>
-      Call
-    </a>
-    <a class="btn" href="https://wa.me/919988506438">
-      <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3z"/><path d="M9 9.5c.5 2.5 3 5 5.5 5.5l1-1.5-2-1-1 .5c-.8-.5-1.5-1.2-2-2l.5-1-1-2-1 1.5z"/></svg>
-      WhatsApp
-    </a>
-  </div>
-</section>
-
-<div class="tear" aria-hidden="true">one family &middot; two clinics</div>
-
-<!-- ============ PHYSIO ============ -->
-<section class="clinic physio" id="physio">
+<!-- ============ PHYSIOTHERAPY CLINIC ============ -->
+<section class="clinic physio-clinic" id="physio-clinic">
   <div class="clinic-head">
     <div class="badge" aria-hidden="true">
       <!-- moving person -->
       <svg viewBox="0 0 24 24"><circle cx="13.5" cy="4.5" r="1.8"/><path d="M13 8.5l-3.5 2 1 3.5L7 18.5M13 8.5l3 2-1 4 3 4M10.5 14l2.5 1.5"/></svg>
     </div>
-    <h2 class="clinic-name">Physiotherapy Clinic</h2>
+    <h2 class="clinic-name">Dr. Rattan&rsquo;s Physiotherapy Clinic</h2>
   </div>
+  <span class="services-tag">Physiotherapy</span>
   <p class="doctor">Dr. Inderpreet Singh</p>
   <p class="role">Physiotherapist</p>
-  <p class="addr">155-B, Rajguru Nagar,<br>Ferozepur Road, Ludhiana</p>
+  <p class="addr">155 B, Rajguru Nagar,<br>Ludhiana, Punjab 141012</p>
   <p class="phone"><a href="tel:+919988248113">&#9742; 99882 48113</a></p>
   <div class="actions">
-    <a class="btn primary" href="physio.vcf" download="Dr-Inderpreet-Singh-Physio.vcf">
+    <a class="btn primary" href="physio-clinic.vcf" download="Dr-Inderpreet-Singh-Physio-Clinic.vcf">
       <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg>
       Save contact
     </a>
-    <a class="btn" href="https://wa.me/919988248113?text=Hello%2C%20I%20would%20like%20to%20book%20a%20PHYSIOTHERAPY%20appointment.%0AName%3A%20%0APreferred%20day%3A%20%0APreferred%20time%3A%20Morning%20/%20Evening">
+    <a class="btn" href="https://wa.me/919988248113?text=Hello%2C%20I%20would%20like%20to%20book%20a%20PHYSIOTHERAPY%20appointment%20at%20Rajguru%20Nagar.%0AName%3A%20%0APreferred%20day%3A%20%0APreferred%20time%3A%20Morning%20/%20Evening">
       <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M4 10h16M9.5 15.5l2 2 3.5-4"/></svg>
       Book appointment
     </a>
@@ -225,7 +215,69 @@
   </div>
 </section>
 
-<a class="both" href="both.vcf" download="Dr-Rattans-Clinics.vcf">Save both contacts</a>
+<div class="tear" aria-hidden="true">one family &middot; two clinics</div>
+
+<!-- ============ PHYSIODENT CLINIC ============ -->
+<section class="clinic physiodent-clinic" id="physiodent-clinic">
+  <div class="clinic-head">
+    <div class="badge" aria-hidden="true">
+      <!-- tooth + person combined -->
+      <svg viewBox="0 0 24 24"><path d="M7 3.5c-2.4 0-4 1.9-4 4.4 0 4 2 6.6 2.6 10.3.2 1.2.8 2.3 1.9 2.3 1.6 0 1.4-2.6 2-4.6.4-1.4 1.3-2.2 2.5-2.2s2.1.8 2.5 2.2c.6 2 .4 4.6 2 4.6 1.1 0 1.7-1.1 1.9-2.3C19 14.5 21 11.9 21 7.9c0-2.5-1.6-4.4-4-4.4-2 0-3 1.1-5 1.1s-3-1.1-5-1.1z"/></svg>
+    </div>
+    <h2 class="clinic-name">Dr. Rattan&rsquo;s Physiodent Clinic</h2>
+  </div>
+  <span class="services-tag">Dental + Physiotherapy</span>
+  <p class="addr" style="margin-top:12px">#5, Street No. 2, Bhai Harnam Singh Nagar,<br>Sua Road Threekey, Opp. Jagjit Nagar,<br>Ludhiana, Punjab 142028</p>
+
+  <!-- Dental Doctor -->
+  <p class="doctor" style="margin-top:16px">Dr. Rupinder Kaur <span class="role">&middot; B.D.S.</span></p>
+  <p class="role">Dental Surgeon</p>
+  <p class="phone"><a href="tel:+919988506438">&#9742; 99885 06438</a></p>
+  <div class="actions">
+    <a class="btn" href="https://wa.me/919988506438?text=Hello%2C%20I%20would%20like%20to%20book%20a%20DENTAL%20appointment%20at%20Physiodent%20Clinic.%0AName%3A%20%0APreferred%20day%3A%20%0APreferred%20time%3A%20Morning%20/%20Evening">
+      <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M4 10h16M9.5 15.5l2 2 3.5-4"/></svg>
+      Book dental
+    </a>
+    <a class="btn" href="tel:+919988506438">
+      <svg viewBox="0 0 24 24"><path d="M5 4h4l1.5 4.5L8 10a12 12 0 0 0 6 6l1.5-2.5L20 15v4a1.5 1.5 0 0 1-1.7 1.5C10 19.7 4.3 14 3.5 5.7A1.5 1.5 0 0 1 5 4z"/></svg>
+      Call
+    </a>
+  </div>
+
+  <!-- Physio Doctor -->
+  <p class="doctor" style="margin-top:18px">Dr. Inderpreet Singh</p>
+  <p class="role">Physiotherapist</p>
+  <p class="phone"><a href="tel:+919988248113">&#9742; 99882 48113</a></p>
+  <div class="actions">
+    <a class="btn" href="https://wa.me/919988248113?text=Hello%2C%20I%20would%20like%20to%20book%20a%20PHYSIOTHERAPY%20appointment%20at%20Physiodent%20Clinic.%0AName%3A%20%0APreferred%20day%3A%20%0APreferred%20time%3A%20Morning%20/%20Evening">
+      <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M4 10h16M9.5 15.5l2 2 3.5-4"/></svg>
+      Book physio
+    </a>
+    <a class="btn" href="tel:+919988248113">
+      <svg viewBox="0 0 24 24"><path d="M5 4h4l1.5 4.5L8 10a12 12 0 0 0 6 6l1.5-2.5L20 15v4a1.5 1.5 0 0 1-1.7 1.5C10 19.7 4.3 14 3.5 5.7A1.5 1.5 0 0 1 5 4z"/></svg>
+      Call
+    </a>
+  </div>
+
+  <!-- Save Contact Buttons -->
+  <div class="save-contacts">
+    <span class="label">Save contact</span>
+    <div class="btn-row triple">
+      <a class="btn primary" href="physiodent-dental.vcf" download="Dr-Rupinder-Kaur-Physiodent.vcf">
+        <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg>
+        Dental
+      </a>
+      <a class="btn primary" href="physiodent-physio.vcf" download="Dr-Inderpreet-Singh-Physiodent.vcf">
+        <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg>
+        Physio
+      </a>
+      <a class="btn primary" href="physiodent-both.vcf" download="Dr-Rattans-Physiodent-Clinic.vcf">
+        <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg>
+        Both
+      </a>
+    </div>
+  </div>
+</section>
 
 <a class="insta" href="https://www.instagram.com/dr_rattans_physiodent_clinic" rel="noopener">
   <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none"/></svg>
